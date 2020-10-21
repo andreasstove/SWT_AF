@@ -52,6 +52,7 @@ namespace SWT_OP
 
 
         }
+        /*
         private void RfidDetected(int id)
         {
             switch (_state)
@@ -107,6 +108,6 @@ namespace SWT_OP
             }
         }
 
-
+    */
     }
 }
