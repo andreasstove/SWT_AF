@@ -6,7 +6,7 @@ using System.Threading;
 namespace SWT_OP.Unit.Test
 {
     [TestFixture]
-    public class Tests
+    public class DoorTest
     {
         private DoorEventArgs _receivedDoorEventArgs;
         private Door _uut;
