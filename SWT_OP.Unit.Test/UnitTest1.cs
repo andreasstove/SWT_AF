@@ -2,6 +2,7 @@ using NUnit.Framework;
 
 namespace SWT_OP.Unit.Test
 {
+    [TestFixture]
     public class Tests
     {
         private DoorEventArgs _receivedDoorEventArgs;
