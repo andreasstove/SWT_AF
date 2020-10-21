@@ -12,6 +12,7 @@ namespace SWT_OP
             Locked,
             DoorOpen
         };
+
         private LadeskabState _state;
         private IUsbCharger _charger;
 
@@ -25,15 +26,19 @@ namespace SWT_OP
         public bool CurrentDoor { get; set;}
         public int CurrentRFIDReader { get; set; }
         
-        StationControl(IDisplay display, IDoor door, IRFIDReader RFIDReader)
+        public StationControl(IDoor door, IRFIDReader RFIDReader)
         {
             door.doorOpenEvent += HandleDoorOpenEvent;
             door.doorCloseEvent += HandleDoorCloseEvent;
             RFIDReader.RfidEvent += HandleRfidEvent;
+
+            _door = door;
+            _RFIDReader = RFIDReader;
         }
         private void HandleRfidEvent(object sender, RFIDEventArgs e)
         {
             CurrentRFIDReader = e.RFID;
+            _display.showConnectToPhone();
         }
         private void HandleDoorOpenEvent(object sender, DoorEventArgs e )
         {
@@ -47,6 +52,8 @@ namespace SWT_OP
             _state = LadeskabState.Locked;
             _display.showReadRFID();
         }
+
+
         public void CheckId(int OldId, int id)
         {
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SWT_OP
 {
-    interface IDoor
+    public interface IDoor
     {
         public event EventHandler<DoorEventArgs> doorCloseEvent;
         public event EventHandler<DoorEventArgs> doorOpenEvent;

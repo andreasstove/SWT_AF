@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SWT_OP
 {
-    interface IDisplay
+    public interface IDisplay
     {
         public void showConnectToPhone();
         public void showReadRFID();

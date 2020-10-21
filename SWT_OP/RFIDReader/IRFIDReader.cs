@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SWT_OP
 {
-    interface IRFIDReader
+    public interface IRFIDReader
     {
         public event EventHandler<RFIDEventArgs> RfidEvent;
         public void RfidDetected(int id);
