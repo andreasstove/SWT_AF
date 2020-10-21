@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _2Aflevering
+namespace SWT_OP
 {
     public class CurrentEventArgs : EventArgs
     {
