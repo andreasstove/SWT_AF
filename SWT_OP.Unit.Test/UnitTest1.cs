@@ -42,7 +42,6 @@ namespace SWT_OP.Unit.Test
         [Test]
         public void DoorUnlocked()
         {
-            Assert.Pass();
             _uut.LockedDoor();
 
             _uut.UnlockedDoor();
