@@ -40,6 +40,13 @@ namespace SWT_OP.Unit.Test
             _door.doorOpenEvent += Raise.EventWith(new DoorEventArgs { Door = id });
             Assert.That(_uut.CurrentDoor, Is.EqualTo(id));
         }
+        [TestCase(true)]
+        [TestCase(false)]
+        public void doorCloseEventRaised_booleanArguments_CurretDoorIsCorrect(bool id)
+        {
+            _door.doorCloseEvent += Raise.EventWith(new DoorEventArgs { Door = id });
+            Assert.That(_uut.CurrentDoor, Is.EqualTo(id));
+        }
 
     }
 }
