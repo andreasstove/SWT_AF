@@ -66,11 +66,12 @@ namespace SWT_OP
             {
                 case LadeskabState.Available:
                     // Check for ladeforbindelse
-                    if (_charger.Connected)
+                    
+                    if (_charger.IsConnected)
                     {
                         _door.LockedDoor();
                         //_door.LockDoor();
-                        //_charger.StartCharge();
+                        _charger.startCharge();
                         _oldId = id;
                         /*using (var writer = File.AppendText(logFile))
                         {
@@ -96,7 +97,7 @@ namespace SWT_OP
                     if (id == _oldId)
                     {
                         
-                        //_charger.StopCharge();
+                        _charger.stopCharge();
                         //_door.UnlockDoor();
                         _door.UnlockedDoor();
                         /*using (var writer = File.AppendText(logFile))
