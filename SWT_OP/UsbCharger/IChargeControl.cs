@@ -2,10 +2,12 @@
 {
     interface IChargeControl
     {
-        private void HandleCurrentEvent(object s, CurrentEventArgs e)
-        {
-            
-        }
+       
+        public bool IsConnected { get; set;}
+        public void startCharge();
+        
+
+        
     }
    
 }
