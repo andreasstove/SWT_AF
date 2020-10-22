@@ -14,7 +14,7 @@ namespace SWT_OP
         };
 
         private LadeskabState _state;
-        private IUsbCharger _charger;
+        private IChargeControl _charger;
 
         private readonly IDoor _door;
         private readonly IDisplay _display;
@@ -59,7 +59,7 @@ namespace SWT_OP
 
 
         }
-        /*
+        
         private void RfidDetected(int id)
         {
             switch (_state)
@@ -70,13 +70,13 @@ namespace SWT_OP
                     {
                         _door.LockedDoor();
                         //_door.LockDoor();
-                        _charger.StartCharge();
+                        //_charger.StartCharge();
                         _oldId = id;
-                        using (var writer = File.AppendText(logFile))
+                        /*using (var writer = File.AppendText(logFile))
                         {
                             writer.WriteLine(DateTime.Now + ": Skab låst med RFID: {0}", id);
                         }
-
+                        */
                         Console.WriteLine("Skabet er låst og din telefon lades. Brug dit RFID tag til at låse op.");
                         _state = LadeskabState.Locked;
                     }
@@ -95,14 +95,15 @@ namespace SWT_OP
                     // Check for correct ID
                     if (id == _oldId)
                     {
-                        _charger.StopCharge();
+                        
+                        //_charger.StopCharge();
                         //_door.UnlockDoor();
                         _door.UnlockedDoor();
-                        using (var writer = File.AppendText(logFile))
+                        /*using (var writer = File.AppendText(logFile))
                         {
                             writer.WriteLine(DateTime.Now + ": Skab låst op med RFID: {0}", id);
                         }
-
+                        */
                         Console.WriteLine("Tag din telefon ud af skabet og luk døren");
                         _state = LadeskabState.Available;
                     }
@@ -115,6 +116,6 @@ namespace SWT_OP
             }
         }
 
-    */
+    
     }
 }
