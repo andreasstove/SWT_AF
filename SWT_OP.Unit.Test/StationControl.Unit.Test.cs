@@ -28,14 +28,18 @@ namespace SWT_OP.Unit.Test
         [TestCase(200)]
         [TestCase(-100)]
         [TestCase(0)]
-        public void RFIDEventRaised_DifferentArguments_RFIDReaderIsCorrect(int id)
+        public void RFIDEventRaised_DifferentArguments_CurrentRFIDReaderIsCorrect(int id)
         {
-            
             _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = id });
-            Assert.That(_uut.CurrentRFIDReader, Is.EqualTo(id));
-            
-            
-            
+            Assert.That(_uut.CurrentRFIDReader, Is.EqualTo(id)); 
+        }
+        [TestCase(0)]
+        [TestCase(100)]
+        [TestCase(-100)]
+        public void RfidEventRaised_DifferentArguments_RfidDetected(int id)
+        {
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = id });
+            _rFIDReader.RfidDetect(id);
         }
     }
 }
