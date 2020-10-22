@@ -9,8 +9,14 @@ namespace SWT_OP
         public bool IsConnected { get; set; }
         public void startCharge()
         {
-
+            Console.WriteLine("Der lades nu");
         }
+
+        public void stopCharge()
+        {
+            Console.WriteLine("Der lades ikke længere");
+        }
+
         private void HandleCurrentEvent(object s, CurrentEventArgs e)
         {
             if (e.Current == 0)
