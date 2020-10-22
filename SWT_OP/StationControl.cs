@@ -26,12 +26,12 @@ namespace SWT_OP
         public bool CurrentDoor { get; set;}
         public int CurrentRFIDReader { get; set; }
         
-        public StationControl(IDoor door, IRFIDReader RFIDReader)
+        public StationControl(IDoor door, IRFIDReader RFIDReader, IDisplay display)
         {
             door.doorOpenEvent += HandleDoorOpenEvent;
             door.doorCloseEvent += HandleDoorCloseEvent;
             RFIDReader.RfidEvent += HandleRfidEvent;
-
+            _display = display;
             _door = door;
             _RFIDReader = RFIDReader;
         }
@@ -51,13 +51,6 @@ namespace SWT_OP
             CurrentDoor = e.Door;
             _state = LadeskabState.Locked;
             _display.showReadRFID();
-        }
-
-
-        public void CheckId(int OldId, int id)
-        {
-
-
         }
         
         private void RfidDetected(int id)

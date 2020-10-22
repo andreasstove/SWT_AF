@@ -8,7 +8,7 @@ using NSubstitute;
 namespace SWT_OP.Unit.Test
 {
     [TestFixture]
-    public class TestDisplay
+    class TestDisplay
     {
         private IRFIDReader _rFIDReader;
         private IDoor _door;
@@ -26,16 +26,15 @@ namespace SWT_OP.Unit.Test
             _rFIDReader = Substitute.For<IRFIDReader>();
             _display = Substitute.For<IDisplay>();
             _door = Substitute.For<IDoor>();
-            _uut = new StationControl( _door, _rFIDReader);
+            _uut = new StationControl( _door, _rFIDReader, _display);
             
         }
 
         [Test]
         public void Test()
         {
-            /*_uut.CurrentDoor = false;
-            _display.Received().showConnectToPhone();
-            */
+           
+            
         }
        
         

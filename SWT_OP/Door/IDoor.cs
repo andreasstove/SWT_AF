@@ -6,10 +6,10 @@ namespace SWT_OP
 {
     public interface IDoor
     {
-        public event EventHandler<DoorEventArgs> doorCloseEvent;
-        public event EventHandler<DoorEventArgs> doorOpenEvent;
-        public bool doorLocked { get; set; }
-        public void LockedDoor();
-        public void UnlockedDoor();
+        event EventHandler<DoorEventArgs> doorCloseEvent;
+        event EventHandler<DoorEventArgs> doorOpenEvent;
+        bool doorLocked { get; set; }
+        void LockedDoor();
+        void UnlockedDoor();
     }
 }

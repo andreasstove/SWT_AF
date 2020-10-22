@@ -6,8 +6,8 @@ namespace SWT_OP
 {
     public interface IRFIDReader
     {
-        public event EventHandler<RFIDEventArgs> RfidEvent;
-        public void RfidDetected(int id);
+        event EventHandler<RFIDEventArgs> RfidEvent;
+        void RfidDetect(int id);
        
     }
 }

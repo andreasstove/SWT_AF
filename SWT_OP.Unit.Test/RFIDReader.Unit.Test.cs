@@ -7,7 +7,7 @@ using System.Threading;
 namespace SWT_OP.Unit.Test
 {
     [TestFixture]
-    public class RFIDReaderTest
+    class RFIDReaderTest
     {
         private RFIDEventArgs _rFIDEventArgs;
         private RFIDReader _uut;
@@ -19,7 +19,7 @@ namespace SWT_OP.Unit.Test
 
             _uut = new RFIDReader();
 
-            _uut.RfidDetected(id);
+            _uut.RfidDetect(id);
 
             _uut.RfidEvent +=
                 (o, args) =>
@@ -31,7 +31,7 @@ namespace SWT_OP.Unit.Test
         public void RfidDetectedEvent()
         {
             int newId = 500;
-            _uut.RfidDetected(newId);
+            _uut.RfidDetect(newId);
 
             Assert.That(_rFIDEventArgs.RFID, Is.EqualTo(newId));
         }
