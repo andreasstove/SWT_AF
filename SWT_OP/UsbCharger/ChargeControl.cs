@@ -6,7 +6,16 @@ namespace SWT_OP
 {
     public class ChargeControl : IChargeControl
     {
+        private readonly IUsbCharger _usbCharger;
+
         public bool IsConnected { get; set; }
+
+        public ChargeControl(IUsbCharger usbCharger)
+        {
+            usbCharger.currentValueEvent += HandleCurrentEvent;
+            _usbCharger = usbCharger;
+        }
+
         public void startCharge()
         {
             Console.WriteLine("Der lades nu");

@@ -2,7 +2,7 @@
 
 namespace SWT_OP
 {
-    interface IUsbCharger
+    public interface IUsbCharger
     {
         public event EventHandler<CurrentEventArgs> currentValueEvent;
         public double CurrentValue { get; set; }
