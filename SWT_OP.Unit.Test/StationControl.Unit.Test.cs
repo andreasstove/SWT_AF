@@ -33,13 +33,13 @@ namespace SWT_OP.Unit.Test
             _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = id });
             Assert.That(_uut.CurrentRFIDReader, Is.EqualTo(id)); 
         }
-        [TestCase(0)]
-        [TestCase(100)]
-        [TestCase(-100)]
-        public void RfidEventRaised_DifferentArguments_RfidDetected(int id)
+        [TestCase(true)]
+        [TestCase(false)]
+        public void doorOpenEventRaised_booleanArguments_CurretDoorIsCorrect(bool id)
         {
-            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = id });
-            _rFIDReader.RfidDetect(id);
+            _door.doorOpenEvent += Raise.EventWith(new DoorEventArgs { Door = id });
+            Assert.That(_uut.CurrentDoor, Is.EqualTo(id));
         }
+
     }
 }
