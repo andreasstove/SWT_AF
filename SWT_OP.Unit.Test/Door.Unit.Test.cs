@@ -10,7 +10,7 @@ namespace SWT_OP.Unit.Test
     {
         private DoorEventArgs _receivedDoorEventArgs;
         private Door _uut;
-
+        
         [SetUp]
         public void Setup()
         {
@@ -18,7 +18,7 @@ namespace SWT_OP.Unit.Test
 
             _uut = new Door();
             _uut.UnlockedDoor();
-
+            
             _uut.doorCloseEvent +=
                 (o, args) =>
                 {
