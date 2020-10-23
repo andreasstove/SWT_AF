@@ -10,20 +10,20 @@ namespace SWT_OP.Unit.Test
     {
       
         private UsbCharger _uut;
-        private UsbChargerEventArgs _receivedUsbChargerEventArgs;
+        private CurrentEventArgs _currentEventArgs;
 
         [SetUp]
         public void Setup()
         {
-            _receivedUsbChargerEventArgs = null;
+            _currentEventArgs = null;
 
             _uut = new UsbCharger();
             //_uut.UnlockedDoor();
-            _uut.CurrentValueDetectedEvent +=
+            _uut.currentValueEvent +=
                 (o, args) =>
                 {
-                    _receivedUsbChargerEventArgs = args;
-                }
+                    _currentEventArgs = args;
+                };
         }
 
 
@@ -32,16 +32,15 @@ namespace SWT_OP.Unit.Test
         {
             _uut.StartCharge();
 
-            Assert.That(_receivedUsbChargerEventArgs.Current, Is.EqualTo(500));
+            Assert.That(_currentEventArgs.Current, Is.EqualTo(500));
         }
-        //[Test]
-        //public void StopCharge()
-        //{
-        //    _uut.LockedDoor();
+        
+        [Test]
+        public void StopCharge()
+        {
+            _uut.StopCharge();
 
-        //    _uut.UnlockedDoor();
-
-        //    Assert.That(_receivedDoorEventArgs.Door, Is.EqualTo(false));
-        //}
+            Assert.That(_currentEventArgs.Current, Is.EqualTo(0));
+        }
     }
 }

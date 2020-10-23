@@ -1,0 +1,13 @@
+C:\Users\Andreas\Source\Repos\SWT_AF\SWT_OP\bin\Debug\netcoreapp3.1\SWT_OP.exe
+C:\Users\Andreas\Source\Repos\SWT_AF\SWT_OP\bin\Debug\netcoreapp3.1\SWT_OP.deps.json
+C:\Users\Andreas\Source\Repos\SWT_AF\SWT_OP\bin\Debug\netcoreapp3.1\SWT_OP.runtimeconfig.json
+C:\Users\Andreas\Source\Repos\SWT_AF\SWT_OP\bin\Debug\netcoreapp3.1\SWT_OP.runtimeconfig.dev.json
+C:\Users\Andreas\Source\Repos\SWT_AF\SWT_OP\bin\Debug\netcoreapp3.1\SWT_OP.dll
+C:\Users\Andreas\Source\Repos\SWT_AF\SWT_OP\bin\Debug\netcoreapp3.1\SWT_OP.pdb
+C:\Users\Andreas\Source\Repos\SWT_AF\SWT_OP\obj\Debug\netcoreapp3.1\SWT_OP.csprojAssemblyReference.cache
+C:\Users\Andreas\Source\Repos\SWT_AF\SWT_OP\obj\Debug\netcoreapp3.1\SWT_OP.AssemblyInfoInputs.cache
+C:\Users\Andreas\Source\Repos\SWT_AF\SWT_OP\obj\Debug\netcoreapp3.1\SWT_OP.AssemblyInfo.cs
+C:\Users\Andreas\Source\Repos\SWT_AF\SWT_OP\obj\Debug\netcoreapp3.1\SWT_OP.csproj.CoreCompileInputs.cache
+C:\Users\Andreas\Source\Repos\SWT_AF\SWT_OP\obj\Debug\netcoreapp3.1\SWT_OP.dll
+C:\Users\Andreas\Source\Repos\SWT_AF\SWT_OP\obj\Debug\netcoreapp3.1\SWT_OP.pdb
+C:\Users\Andreas\Source\Repos\SWT_AF\SWT_OP\obj\Debug\netcoreapp3.1\SWT_OP.genruntimeconfig.cache
