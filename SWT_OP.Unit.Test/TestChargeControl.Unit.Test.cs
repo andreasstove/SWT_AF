@@ -56,11 +56,19 @@ namespace SWT_OP.Unit.Test
             Assert.That(_uut.IsConnected, Is.EqualTo(nextConnection));
         }
 
-        //[Test]
-        //public void TestToDisconnect()
-        //{
-            
-        //}
-       
+        [Test]
+        public void TestStartCharge()
+        {
+            _uut.startCharge();
+            _usbCharger.Received(1).StartCharge();
+        }
+
+        [Test]
+        public void StopCharge()
+        {
+            _uut.stopCharge();
+            _usbCharger.Received(1).StopCharge();
+        }
+
     }
 }
