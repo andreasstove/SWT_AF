@@ -34,6 +34,7 @@ namespace SWT_OP
             _display = display;
             _door = door;
             _RFIDReader = RFIDReader;
+            
         }
         private void HandleRfidEvent(object sender, RFIDEventArgs e)
         {
