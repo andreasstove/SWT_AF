@@ -92,12 +92,36 @@ namespace SWT_OP.Unit.Test
 
     
         [Test]
-        public void test()
+        public void TestForRfidDetectionWithTwoIDsSame()
         {
             _charger.IsConnected = true;
             _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
             _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
             _door.Received().UnlockedDoor();
+        }
+
+        [Test]
+        public void TestForRfidDetectionWithTwoIDsNotSame()
+        {
+            _charger.IsConnected = true;
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 4 });
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
+            _door.Received().LockedDoor();
+        }
+
+        [Test]
+        public void ChargerNotON()
+        {
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
+            _door.DidNotReceive().LockedDoor();
+        }
+
+        [Test]
+        public void DoorOpened()
+        {
+            _door.doorOpenEvent += Raise.EventWith(new DoorEventArgs { Door = true });
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
+            _door.Received().LockedDoor();
         }
 
     }
