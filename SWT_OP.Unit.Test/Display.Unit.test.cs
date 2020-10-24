@@ -18,8 +18,8 @@ namespace SWT_OP.Unit.Test
         private StationControl _uut;
 
 
-        
-        
+
+
         [SetUp]
         public void Setup()
         {
@@ -27,34 +27,44 @@ namespace SWT_OP.Unit.Test
             _display = Substitute.For<IDisplay>();
             _door = Substitute.For<IDoor>();
             _charger = Substitute.For<IChargeControl>();
-            _uut = new StationControl( _door, _rFIDReader, _display,_charger);
-            
+            _uut = new StationControl(_door, _rFIDReader, _display, _charger);
+
         }
 
         [Test]
-        public void Test()
-        {   
-            bool id = true;
-            _door.doorOpenEvent += Raise.EventWith(new DoorEventArgs { Door = id });
+        public void ShowConnectionWithDoorEvent()
+        {
+            _door.doorOpenEvent += Raise.EventWith(new DoorEventArgs { Door = true });
             _display.Received().showConnectToPhone();
         }
 
         [Test]
-        public void Test2()
+        public void ShowRFID()
         {
-            bool id = false;
-            _door.doorCloseEvent += Raise.EventWith(new DoorEventArgs { Door = id });
+            _door.doorCloseEvent += Raise.EventWith(new DoorEventArgs { Door = false });
             _display.Received().showReadRFID();
         }
 
         [Test]
-        public void Test3()
+        public void ShowConnection()
         {
-            int id = 2;
-            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = id });
+            _charger.IsConnected = true;
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 8 });
             _display.Received().showConnectToPhone();
         }
 
+        [Test]
+        public void ShowFailConnection()
+        {
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 3 });
+            _display.Received().showConnectionToPhoneFailed();
+        }
+
+        //[Test]
+        //public void et
+        //{
+
+        //}
         
     }
 }
