@@ -80,16 +80,24 @@ namespace SWT_OP.Unit.Test
         }
 
         [TestCase(100)]
-        [TestCase(0)]
+    //    [TestCase(0)]
         [TestCase(-100)]
         public void RfidDected_doorOpenEvent_CurrectId(int id)
         {
-            bool lockedDoor = true;
+            bool lockedDoor = false;
             _door.doorCloseEvent += Raise.EventWith(new DoorEventArgs { Door = lockedDoor });
             _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = id });
-            Assert.That(_uut.CurrentRFIDReader, Is.EqualTo(id));
+            Assert.That(_uut.CurrentDoor, Is.EqualTo(false));
         }
 
+//        [Test]
+//        public void test()
+//        {
+//            _charger.IsConnected = true;
+////            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
+//            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
+//            Assert.That(_door.doorLocked, Is.EqualTo(true));
+//        }
 
     }
 }
