@@ -13,6 +13,7 @@ namespace SWT_OP
         public ChargeControl(IUsbCharger usbCharger)
         {
             usbCharger.currentValueEvent += HandleCurrentEvent;
+            usbCharger.connectedValueEvent += HandleConnectionEvent;
             _usbCharger = usbCharger;
         }
 
