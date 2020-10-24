@@ -22,7 +22,6 @@ namespace SWT_OP.Unit.Test
         [SetUp]
         public void Setup()
         {
-            //_display = Substitute.For<IDisplay>();
             _rFIDReader = Substitute.For<IRFIDReader>();
             _display = Substitute.For<IDisplay>();
             _door = Substitute.For<IDoor>();
@@ -32,9 +31,11 @@ namespace SWT_OP.Unit.Test
 
         [Test]
         public void Test()
-        {
-           
-            
+        {   
+            bool id = true;
+            _door.doorOpenEvent += Raise.EventWith(new DoorEventArgs { Door = id });
+            _display.Received().showConnectToPhone();
+
         }
        
         

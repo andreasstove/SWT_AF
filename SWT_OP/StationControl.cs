@@ -53,7 +53,7 @@ namespace SWT_OP
             _display.showReadRFID();
         }
         
-        public void RfidDetected(int id)
+        private void RfidDetected(int id)
         {
             switch (_state)
             {
