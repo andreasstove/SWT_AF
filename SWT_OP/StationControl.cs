@@ -71,7 +71,7 @@ namespace SWT_OP
             switch (_state)
             {
                 case LadeskabState.Available:
-                    // Check for ladeforbindelse
+                    // Check for ladeforbindelse 
                     
                     if (_charger.IsConnected)
                     {
