@@ -48,20 +48,21 @@ namespace SWT_OP
             else
             {
                 _display.showConnectToPhone();
+                RfidDetected(e.RFID);
             }
             
-            RfidDetected(e.RFID);
+ 
         }
         private void HandleDoorOpenEvent(object sender, DoorEventArgs e )
         {
-            CurrentDoor = e.Door;
+            CurrentDoor = e.Door; // ´lave det om til noget andet
             _state = LadeskabState.DoorOpen;
             _display.showConnectToPhone();
         }
         private void HandleDoorCloseEvent(object sender, DoorEventArgs e)
         {
             CurrentDoor = e.Door;
-            _state = LadeskabState.Locked;
+            _state = LadeskabState.Available;
             _display.showReadRFID();
         }
         
