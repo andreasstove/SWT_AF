@@ -67,5 +67,15 @@ namespace SWT_OP.Unit.Test
             Assert.That(_uut.CurrentRFIDReader, Is.EqualTo(5));
         }
 
+        [Test]
+        public void RfidDected_doorOpenEvent()
+        {
+            bool id = false;
+            _door.doorOpenEvent += Raise.EventWith(new DoorEventArgs { Door = id });
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
+            Assert.That(_uut.CurrentRFIDReader, Is.EqualTo(5));
+
+        }
+
     }
 }
