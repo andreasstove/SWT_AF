@@ -30,12 +30,37 @@ namespace SWT_OP.Unit.Test
         //    Assert.That(_uut.IsConnected, Is.EqualTo(set));
         //}
 
-        [Test]
-        public void TestToChargeWithConnection()
+        [TestCase(false)]
+        [TestCase(true)]
+        public void TestToConnection(bool connection)
         {
-            _usbCharger.connectedValueEvent += Raise.EventWith(new ConnectedEventArgs { Connected = true });
-            Assert.That(_uut.IsConnected, Is.EqualTo(true));
+            _usbCharger.connectedValueEvent += Raise.EventWith(new ConnectedEventArgs { Connected = connection });
+            Assert.That(_uut.IsConnected, Is.EqualTo(connection));
         }
+
+        [TestCase(false)]
+        [TestCase(true)]
+        public void TestToConnectionDouble(bool connection)
+        {
+            _usbCharger.connectedValueEvent += Raise.EventWith(new ConnectedEventArgs { Connected = connection });
+            _usbCharger.connectedValueEvent += Raise.EventWith(new ConnectedEventArgs { Connected = connection });
+            Assert.That(_uut.IsConnected, Is.EqualTo(connection));
+        }
+
+        [TestCase(false,true)]
+        [TestCase(true,false)]
+        public void TestToConnectionChange(bool connection, bool nextConnection)
+        {
+            _usbCharger.connectedValueEvent += Raise.EventWith(new ConnectedEventArgs { Connected = connection });
+            _usbCharger.connectedValueEvent += Raise.EventWith(new ConnectedEventArgs { Connected = nextConnection });
+            Assert.That(_uut.IsConnected, Is.EqualTo(nextConnection));
+        }
+
+        //[Test]
+        //public void TestToDisconnect()
+        //{
+            
+        //}
        
     }
 }
