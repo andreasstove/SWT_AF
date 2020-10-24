@@ -121,7 +121,7 @@ namespace SWT_OP.Unit.Test
         {
             _door.doorOpenEvent += Raise.EventWith(new DoorEventArgs { Door = true });
             _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
-            _door.Received().LockedDoor();
+            _door.DidNotReceive().LockedDoor();
         }
 
     }
