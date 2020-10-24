@@ -13,6 +13,7 @@ namespace SWT_OP.Unit.Test
         private IRFIDReader _rFIDReader;
         private IDoor _door;
         private IDisplay _display;
+        private IChargeControl _charger;
 
         private StationControl _uut;
 
@@ -25,7 +26,8 @@ namespace SWT_OP.Unit.Test
             _rFIDReader = Substitute.For<IRFIDReader>();
             _display = Substitute.For<IDisplay>();
             _door = Substitute.For<IDoor>();
-            _uut = new StationControl( _door, _rFIDReader, _display);
+            _charger = Substitute.For<IChargeControl>();
+            _uut = new StationControl( _door, _rFIDReader, _display,_charger);
             
         }
 

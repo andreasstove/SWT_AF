@@ -26,7 +26,7 @@ namespace SWT_OP
         public bool CurrentDoor { get; set;}
         public int CurrentRFIDReader { get; set; }
         
-        public StationControl(IDoor door, IRFIDReader RFIDReader, IDisplay display)
+        public StationControl(IDoor door, IRFIDReader RFIDReader, IDisplay display, IChargeControl charger)
         {
             door.doorOpenEvent += HandleDoorOpenEvent;
             door.doorCloseEvent += HandleDoorCloseEvent;
@@ -34,11 +34,15 @@ namespace SWT_OP
             _display = display;
             _door = door;
             _RFIDReader = RFIDReader;
+            _state = LadeskabState.Available;
+            _charger = charger;
+            _charger.IsConnected = false;
         }
         private void HandleRfidEvent(object sender, RFIDEventArgs e)
         {
             CurrentRFIDReader = e.RFID;
             _display.showConnectToPhone();
+            RfidDetected(e.RFID);
         }
         private void HandleDoorOpenEvent(object sender, DoorEventArgs e )
         {
@@ -81,32 +85,32 @@ namespace SWT_OP
 
                     break;
 
-                case LadeskabState.DoorOpen:
-                    // Ignore
-                    break;
+                //case LadeskabState.DoorOpen:
+                //    // Ignore
+                //    break;
 
-                case LadeskabState.Locked:
-                    // Check for correct ID
-                    if (id == _oldId)
-                    {
+                //case LadeskabState.Locked:
+                //    // Check for correct ID
+                //    if (id == _oldId)
+                //    {
                         
-                        _charger.stopCharge();
-                        //_door.UnlockDoor();
-                        _door.UnlockedDoor();
-                        /*using (var writer = File.AppendText(logFile))
-                        {
-                            writer.WriteLine(DateTime.Now + ": Skab låst op med RFID: {0}", id);
-                        }
-                        */
-                        Console.WriteLine("Tag din telefon ud af skabet og luk døren");
-                        _state = LadeskabState.Available;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Forkert RFID tag");
-                    }
+                //        _charger.stopCharge();
+                //        //_door.UnlockDoor();
+                //        _door.UnlockedDoor();
+                //        /*using (var writer = File.AppendText(logFile))
+                //        {
+                //            writer.WriteLine(DateTime.Now + ": Skab låst op med RFID: {0}", id);
+                //        }
+                //        */
+                //        Console.WriteLine("Tag din telefon ud af skabet og luk døren");
+                //        _state = LadeskabState.Available;
+                //    }
+                //    else
+                //    {
+                //        Console.WriteLine("Forkert RFID tag");
+                //    }
 
-                    break;
+                //    break;
             }
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace SWT_OP
 {
-    interface IChargeControl
+    public interface IChargeControl
     {
        
         public bool IsConnected { get; set;}

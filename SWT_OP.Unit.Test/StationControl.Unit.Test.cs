@@ -13,6 +13,7 @@ namespace SWT_OP.Unit.Test
         private IRFIDReader _rFIDReader;
         private IDoor _door;
         private IDisplay _display;
+        private IChargeControl _charger;
 
         private StationControl _uut;
 
@@ -22,7 +23,9 @@ namespace SWT_OP.Unit.Test
             _door = Substitute.For<IDoor>();
             _rFIDReader = Substitute.For<IRFIDReader>();
             _display = Substitute.For<IDisplay>();
-            _uut = new StationControl(_door, _rFIDReader, _display);
+            _charger = Substitute.For<IChargeControl>();
+
+            _uut = new StationControl(_door, _rFIDReader, _display,_charger);
 
         }
         [TestCase(200)]
@@ -47,5 +50,14 @@ namespace SWT_OP.Unit.Test
             _door.doorCloseEvent += Raise.EventWith(new DoorEventArgs { Door = id });
             Assert.That(_uut.CurrentDoor, Is.EqualTo(id));
         }
+
+        [Test]
+        public void RfidTest()
+        {
+
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
+            Assert.That(_uut.CurrentRFIDReader, Is.EqualTo(5));
+        }
+
     }
 }
