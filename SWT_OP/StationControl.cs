@@ -41,7 +41,15 @@ namespace SWT_OP
         private void HandleRfidEvent(object sender, RFIDEventArgs e)
         {
             CurrentRFIDReader = e.RFID;
-            _display.showConnectToPhone();
+            if (_charger.IsConnected == false)
+            {
+                _display.showConnectionToPhoneFailed();
+            }
+            else
+            {
+                _display.showConnectToPhone();
+            }
+            
             RfidDetected(e.RFID);
         }
         private void HandleDoorOpenEvent(object sender, DoorEventArgs e )
