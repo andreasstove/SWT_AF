@@ -19,23 +19,39 @@ namespace SWT_OP
         public void startCharge()
         {
             Console.WriteLine("Der lades nu");
+            _usbCharger.StartCharge();
         }
 
         public void stopCharge()
         {
             Console.WriteLine("Der lades ikke længere");
+            _usbCharger.StopCharge();
         }
 
         private void HandleCurrentEvent(object s, CurrentEventArgs e)
         {
-            if (e.Current <= 0)
+            if (IsConnected != true)
             {
-                IsConnected = false;
+                Console.WriteLine("Der er ikke en telefon tilslutted");
             }
             else
             {
-                IsConnected = true;
+                if (e.Current == 0)
+                {
+                    Console.WriteLine("opladning er stoppet");
+                }
+                else
+                {
+                    Console.WriteLine("Opladning startet");
+                }
             }
+        }
+
+        private void HandleConnectionEvent(object s, ConnectedEventArgs e)
+        {
+            
+                IsConnected = e.Connected;
+            
         }
 
     }

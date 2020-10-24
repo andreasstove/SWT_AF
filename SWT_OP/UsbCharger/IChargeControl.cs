@@ -6,6 +6,7 @@
         public bool IsConnected { get; set;}
         public void startCharge();
         public void stopCharge();
+      
 
         
     }

@@ -6,4 +6,9 @@ namespace SWT_OP
     {
         public double Current { get; set; }
     }
+
+    public class ConnectedEventArgs : EventArgs
+    {
+        public bool Connected { get; set; }
+    }
 }
