@@ -90,14 +90,15 @@ namespace SWT_OP.Unit.Test
             Assert.That(_uut.CurrentDoor, Is.EqualTo(false));
         }
 
-//        [Test]
-//        public void test()
-//        {
-//            _charger.IsConnected = true;
-////            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
-//            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
-//            Assert.That(_door.doorLocked, Is.EqualTo(true));
-//        }
+    
+        [Test]
+        public void test()
+        {
+            _charger.IsConnected = true;
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
+            _door.Received().UnlockedDoor();
+        }
 
     }
 }
