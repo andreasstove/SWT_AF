@@ -21,7 +21,7 @@ namespace SWT_OP
         private readonly IRFIDReader _RFIDReader;
         private int _oldId;
 
-        private string logFile = "logfile.txt";
+        //private string logFile = "logfile.txt";
 
         public bool CurrentDoor { get; set;}
         public int CurrentRFIDReader { get; set; }
@@ -53,7 +53,7 @@ namespace SWT_OP
             _display.showReadRFID();
         }
         
-        private void RfidDetected(int id)
+        public void RfidDetected(int id)
         {
             switch (_state)
             {
