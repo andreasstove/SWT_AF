@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace SWT_OP
@@ -9,6 +10,7 @@ namespace SWT_OP
         private readonly IUsbCharger _usbCharger;
 
         public bool IsConnected { get; set; }
+        public double Current { get; set; }
 
         public ChargeControl(IUsbCharger usbCharger)
         {
@@ -40,10 +42,12 @@ namespace SWT_OP
                 if (e.Current == 0)
                 {
                     Console.WriteLine("opladning er stoppet");
+                    Current = e.Current;
                 }
                 else
                 {
-                    Console.WriteLine("Opladning startet");
+                    Console.WriteLine("Opladning er startet");
+                    Current = e.Current;
                 }
             }
         }
@@ -51,7 +55,11 @@ namespace SWT_OP
         private void HandleConnectionEvent(object s, ConnectedEventArgs e)
         {
             
-                IsConnected = e.Connected;
+            IsConnected = e.Connected;
+            if (IsConnected == false)
+            {
+                Current = 0;
+            }
             
         }
 
