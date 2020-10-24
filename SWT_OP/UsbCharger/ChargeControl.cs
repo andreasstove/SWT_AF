@@ -28,7 +28,7 @@ namespace SWT_OP
 
         private void HandleCurrentEvent(object s, CurrentEventArgs e)
         {
-            if (e.Current == 0)
+            if (e.Current <= 0)
             {
                 IsConnected = false;
             }
