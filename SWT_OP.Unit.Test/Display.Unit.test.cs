@@ -36,8 +36,17 @@ namespace SWT_OP.Unit.Test
             _door.doorOpenEvent += Raise.EventWith(new DoorEventArgs { Door = id });
             _display.Received().showConnectToPhone();
 
+
         }
-       
+
+        [Test]
+        public void Test2()
+        {
+            bool id = false;
+            _door.doorCloseEvent += Raise.EventWith(new DoorEventArgs { Door = id });
+            _display.Received().showReadRFID();
+
+        }
         
     }
 }
