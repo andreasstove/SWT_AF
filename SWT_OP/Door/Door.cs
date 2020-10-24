@@ -13,7 +13,7 @@ namespace SWT_OP
 
         public void LockedDoor()
         {
-            
+  
             if(!doorLocked)
             {
                 DoorClose(new DoorEventArgs { Door = true });
