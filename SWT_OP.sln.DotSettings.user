@@ -10,5 +10,6 @@
     &lt;TestId&gt;NUnit3x::BF8C2461-FC26-4B40-B631-BBC21FECEA41::.NETCoreApp,Version=v3.1::SWT_OP.Unit.Test.TestChargeControl&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::BF8C2461-FC26-4B40-B631-BBC21FECEA41::.NETCoreApp,Version=v3.1::SWT_OP.Unit.Test.TestStationControl&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::BF8C2461-FC26-4B40-B631-BBC21FECEA41::.NETCoreApp,Version=v3.1::SWT_OP.Unit.Test.TestDisplay.Test&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::BF8C2461-FC26-4B40-B631-BBC21FECEA41::.NETCoreApp,Version=v3.1::SWT_OP.Unit.Test.TestDisplay&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
