@@ -41,6 +41,7 @@ namespace SWT_OP
         {
             Connectedbool = true;
             ConnectedDetectedEvent(new ConnectedEventArgs { Connected = Connectedbool });
+            Console.WriteLine("telefonen er nu forbundet");
 
         }
 
@@ -48,6 +49,7 @@ namespace SWT_OP
         {
             Connectedbool = false;
             ConnectedDetectedEvent(new ConnectedEventArgs { Connected = Connectedbool });
+            Console.WriteLine("Telefonen er ikke forbundet længere");
         }
     }
 }

@@ -11,11 +11,13 @@ namespace SWT_OP.Unit.Test
       
         private UsbCharger _uut;
         private CurrentEventArgs _currentEventArgs;
+        private ConnectedEventArgs _connectedEventArgs;
 
         [SetUp]
         public void Setup()
         {
             _currentEventArgs = null;
+            _connectedEventArgs = null;
 
             _uut = new UsbCharger();
             //_uut.UnlockedDoor();
@@ -23,6 +25,11 @@ namespace SWT_OP.Unit.Test
                 (o, args) =>
                 {
                     _currentEventArgs = args;
+                };
+            _uut.connectedValueEvent +=
+                (o, args) =>
+                {
+                    _connectedEventArgs = args;
                 };
         }
 
@@ -41,6 +48,22 @@ namespace SWT_OP.Unit.Test
             _uut.StopCharge();
 
             Assert.That(_currentEventArgs.Current, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void IsConnected()
+        {
+            _uut.ConnectPhone();
+
+            Assert.That(_connectedEventArgs.Connected, Is.EqualTo(true));
+        }
+
+        [Test]
+        public void ISNOTConnected()
+        {
+            _uut.DisconnectPhone();
+
+            Assert.That(_connectedEventArgs.Connected, Is.EqualTo(false));
         }
     }
 }

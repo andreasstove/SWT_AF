@@ -19,17 +19,23 @@ namespace SWT_OP.Unit.Test
             _uut = new ChargeControl(_usbCharger);
         }
 
-        [TestCase(-100,false)]
-        [TestCase(0,false)]
-        [TestCase(100,true)]
-        [TestCase(200,true)]
-        [TestCase(500,true)]
-        public void testForCurrentLow(double current, bool set)
-        {
-            _usbCharger.currentValueEvent += Raise.EventWith(new CurrentEventArgs { Current = current });
-            Assert.That(_uut.IsConnected, Is.EqualTo(set));
-        }
+        //[TestCase(-100,false)]
+        //[TestCase(0,false)]
+        //[TestCase(100,true)]
+        //[TestCase(200,true)]
+        //[TestCase(500,true)]
+        //public void testForCurrentLow(double current, bool set)
+        //{
+        //    _usbCharger.currentValueEvent += Raise.EventWith(new CurrentEventArgs { Current = current });
+        //    Assert.That(_uut.IsConnected, Is.EqualTo(set));
+        //}
 
+        [Test]
+        public void TestToChargeWithConnection()
+        {
+            _usbCharger.connectedValueEvent += Raise.EventWith(new ConnectedEventArgs { Connected = true });
+            Assert.That(_uut.IsConnected, Is.EqualTo(true));
+        }
        
     }
 }
