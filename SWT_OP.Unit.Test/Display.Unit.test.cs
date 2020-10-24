@@ -37,8 +37,6 @@ namespace SWT_OP.Unit.Test
             bool id = true;
             _door.doorOpenEvent += Raise.EventWith(new DoorEventArgs { Door = id });
             _display.Received().showConnectToPhone();
-
-
         }
 
         [Test]
@@ -47,8 +45,16 @@ namespace SWT_OP.Unit.Test
             bool id = false;
             _door.doorCloseEvent += Raise.EventWith(new DoorEventArgs { Door = id });
             _display.Received().showReadRFID();
-
         }
+
+        [Test]
+        public void Test3()
+        {
+            int id = 2;
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = id });
+            _display.Received().showConnectToPhone();
+        }
+
         
     }
 }
