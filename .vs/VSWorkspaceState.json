@@ -1,9 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\SWT_OP.Unit.Test",
-    "\\SWT_OP\\Door",
-    "\\SWT_OP\\UsbCharger"
+    "\\SWT_OP"
   ],
   "SelectedNode": "\\SWT_OP.sln",
   "PreviewInSolutionExplorer": false
