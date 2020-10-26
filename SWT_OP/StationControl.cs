@@ -48,9 +48,9 @@ namespace SWT_OP
             else
             {
                 _display.showConnectToPhone();
-                RfidDetected(e.RFID);
+              
             }
-            
+              RfidDetected(e.RFID);
  
         }
         private void HandleDoorOpenEvent(object sender, DoorEventArgs e )
