@@ -120,7 +120,7 @@ namespace SWT_OP.Unit.Test
         }
 
         [Test]
-        public void TestDoorOpened()
+        public void TestDoorOpenedUnlock()
         {
             bool idDoor = true;
             int idRfid = 5;
@@ -128,6 +128,19 @@ namespace SWT_OP.Unit.Test
             _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = idRfid });
             _door.DidNotReceive().LockedDoor();
         }
+
+        [Test]
+        public void TestDoorOpenedLock()
+        {
+            bool idDoor = true;
+            int idRfid = 5;
+            _charger.IsConnected = true;
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = idRfid });
+            _door.doorOpenEvent += Raise.EventWith(new DoorEventArgs { Door = idDoor });
+            _display.Received(1).showConnectToPhone();
+        }
+
+
 
     }
 }
