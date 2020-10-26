@@ -86,7 +86,7 @@ namespace SWT_OP
                         _charger.startCharge();
                         _oldId = id;
                   
-                        Console.WriteLine("DU ER INDE I LADESKABSTATE.Available Og _charger.IsConnected" +
+                        Console.WriteLine("DU ER INDE I LADESKABSTATE.Available Og IF" +
                             " Skabet er låst og din telefon lades. Brug dit RFID tag til at låse op.");
                         _state = LadeskabState.Locked;
                     }
