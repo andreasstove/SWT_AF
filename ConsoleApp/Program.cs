@@ -46,6 +46,7 @@ namespace ConsoleApp
 
             Console.WriteLine("Nu låses døren, og så prøver vi at åbne den");
             rFIDReader.RfidDetect(130);
+            System.Threading.Thread.Sleep(10000);
             charge.IsConnected = true;
             door.UnlockedDoor();
 
