@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Andreas\\Source\\Repos\\SWT_AF\\ConsoleApp\\ConsoleApp.csproj": {}
+    "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\ConsoleApp\\ConsoleApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Andreas\\Source\\Repos\\SWT_AF\\ConsoleApp\\ConsoleApp.csproj": {
+    "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\ConsoleApp\\ConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andreas\\Source\\Repos\\SWT_AF\\ConsoleApp\\ConsoleApp.csproj",
+        "projectUniqueName": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\ConsoleApp\\ConsoleApp.csproj",
         "projectName": "ConsoleApp",
-        "projectPath": "C:\\Users\\Andreas\\Source\\Repos\\SWT_AF\\ConsoleApp\\ConsoleApp.csproj",
-        "packagesPath": "C:\\Users\\Andreas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andreas\\Source\\Repos\\SWT_AF\\ConsoleApp\\obj\\",
+        "projectPath": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\ConsoleApp\\ConsoleApp.csproj",
+        "packagesPath": "C:\\Users\\Thomas G. Lodberg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\ConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Andreas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Thomas G. Lodberg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,11 +27,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Andreas\\Source\\Repos\\SWT_AF\\SWT_OP.Unit.Test\\SWT_OP.Unit.Test.csproj": {
-                "projectPath": "C:\\Users\\Andreas\\Source\\Repos\\SWT_AF\\SWT_OP.Unit.Test\\SWT_OP.Unit.Test.csproj"
+              "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP.Unit.Test\\SWT_OP.Unit.Test.csproj": {
+                "projectPath": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP.Unit.Test\\SWT_OP.Unit.Test.csproj"
               },
-              "C:\\Users\\Andreas\\Source\\Repos\\SWT_AF\\SWT_OP\\SWT_OP.csproj": {
-                "projectPath": "C:\\Users\\Andreas\\Source\\Repos\\SWT_AF\\SWT_OP\\SWT_OP.csproj"
+              "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj": {
+                "projectPath": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj"
               }
             }
           }
@@ -59,21 +59,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Andreas\\Source\\Repos\\SWT_AF\\SWT_OP.Unit.Test\\SWT_OP.Unit.Test.csproj": {
+    "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP.Unit.Test\\SWT_OP.Unit.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andreas\\Source\\Repos\\SWT_AF\\SWT_OP.Unit.Test\\SWT_OP.Unit.Test.csproj",
+        "projectUniqueName": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP.Unit.Test\\SWT_OP.Unit.Test.csproj",
         "projectName": "SWT_OP.Unit.Test",
-        "projectPath": "C:\\Users\\Andreas\\Source\\Repos\\SWT_AF\\SWT_OP.Unit.Test\\SWT_OP.Unit.Test.csproj",
-        "packagesPath": "C:\\Users\\Andreas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andreas\\Source\\Repos\\SWT_AF\\SWT_OP.Unit.Test\\obj\\",
+        "projectPath": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP.Unit.Test\\SWT_OP.Unit.Test.csproj",
+        "packagesPath": "C:\\Users\\Thomas G. Lodberg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP.Unit.Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Andreas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Thomas G. Lodberg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -86,8 +86,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Andreas\\Source\\Repos\\SWT_AF\\SWT_OP\\SWT_OP.csproj": {
-                "projectPath": "C:\\Users\\Andreas\\Source\\Repos\\SWT_AF\\SWT_OP\\SWT_OP.csproj"
+              "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj": {
+                "projectPath": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj"
               }
             }
           }
@@ -137,21 +137,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Andreas\\Source\\Repos\\SWT_AF\\SWT_OP\\SWT_OP.csproj": {
+    "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andreas\\Source\\Repos\\SWT_AF\\SWT_OP\\SWT_OP.csproj",
+        "projectUniqueName": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj",
         "projectName": "SWT_OP",
-        "projectPath": "C:\\Users\\Andreas\\Source\\Repos\\SWT_AF\\SWT_OP\\SWT_OP.csproj",
-        "packagesPath": "C:\\Users\\Andreas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andreas\\Source\\Repos\\SWT_AF\\SWT_OP\\obj\\",
+        "projectPath": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj",
+        "packagesPath": "C:\\Users\\Thomas G. Lodberg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Andreas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Thomas G. Lodberg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -189,7 +189,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

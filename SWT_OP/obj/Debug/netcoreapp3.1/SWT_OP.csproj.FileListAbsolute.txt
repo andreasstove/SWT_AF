@@ -17,7 +17,6 @@ C:\Users\Thomas G. Lodberg\Source\Repos\andreasstove\SWT_AF\SWT_OP\bin\Debug\net
 C:\Users\Thomas G. Lodberg\Source\Repos\andreasstove\SWT_AF\SWT_OP\bin\Debug\netcoreapp3.1\SWT_OP.runtimeconfig.dev.json
 C:\Users\Thomas G. Lodberg\Source\Repos\andreasstove\SWT_AF\SWT_OP\bin\Debug\netcoreapp3.1\SWT_OP.dll
 C:\Users\Thomas G. Lodberg\Source\Repos\andreasstove\SWT_AF\SWT_OP\bin\Debug\netcoreapp3.1\SWT_OP.pdb
-C:\Users\Thomas G. Lodberg\Source\Repos\andreasstove\SWT_AF\SWT_OP\obj\Debug\netcoreapp3.1\SWT_OP.csprojAssemblyReference.cache
 C:\Users\Thomas G. Lodberg\Source\Repos\andreasstove\SWT_AF\SWT_OP\obj\Debug\netcoreapp3.1\SWT_OP.AssemblyInfoInputs.cache
 C:\Users\Thomas G. Lodberg\Source\Repos\andreasstove\SWT_AF\SWT_OP\obj\Debug\netcoreapp3.1\SWT_OP.AssemblyInfo.cs
 C:\Users\Thomas G. Lodberg\Source\Repos\andreasstove\SWT_AF\SWT_OP\obj\Debug\netcoreapp3.1\SWT_OP.dll
