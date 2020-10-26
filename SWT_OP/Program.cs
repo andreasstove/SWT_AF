@@ -8,7 +8,7 @@ namespace SWT_OP
     {
 
 
-        static void Main(string[] args)
+        static void Mains(string[] args)
         {
             Console.WriteLine("Hej med dig");
         }
