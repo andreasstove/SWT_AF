@@ -27,21 +27,21 @@ namespace SWT_OP
         {
             CurrentValue = 500;
             CurrentValueDetectedEvent(new CurrentEventArgs { Current  = CurrentValue });
-            Console.WriteLine("Charge er startet");
+            //Console.WriteLine("Charge er startet");
         }
 
         public void StopCharge()
         {
             CurrentValue = 0;
             CurrentValueDetectedEvent(new CurrentEventArgs { Current = CurrentValue });
-            Console.WriteLine("Oplader ikke længere");
+            //Console.WriteLine("Oplader ikke længere");
         }
         
         public void ConnectPhone()
         {
             Connectedbool = true;
             ConnectedDetectedEvent(new ConnectedEventArgs { Connected = Connectedbool });
-            Console.WriteLine("telefonen er nu forbundet");
+            //Console.WriteLine("telefonen er nu forbundet");
 
         }
 
@@ -49,7 +49,7 @@ namespace SWT_OP
         {
             Connectedbool = false;
             ConnectedDetectedEvent(new ConnectedEventArgs { Connected = Connectedbool });
-            Console.WriteLine("Telefonen er ikke forbundet længere");
+            //Console.WriteLine("Telefonen er ikke forbundet længere");
         }
     }
 }

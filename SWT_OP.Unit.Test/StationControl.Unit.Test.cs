@@ -51,26 +51,28 @@ namespace SWT_OP.Unit.Test
             Assert.That(_uut.CurrentDoor, Is.EqualTo(id));
         }
 
-        [Test]
-        public void RfidTest()
+        [TestCase(100)]
+        [TestCase(-20)]
+
+        public void RfidDetected_rfidEvent(int id)
         {
 
-            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
-            Assert.That(_uut.CurrentRFIDReader, Is.EqualTo(5));
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = id });
+            Assert.That(_uut.CurrentRFIDReader, Is.EqualTo(id));
         }
-        [Test]
-        public void RfidDetected_doorLocked()
+        [TestCase(100)]
+        [TestCase(-20)]
+        public void TestRfidDetected_doorLocked_CurrectRFIDReaderIsCorrect(int id)
         {
-            bool id = false;
             _charger.IsConnected = true;
-            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
-            Assert.That(_uut.CurrentRFIDReader, Is.EqualTo(5));
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = id });
+            Assert.That(_uut.CurrentRFIDReader, Is.EqualTo(id));
         }
 
         [TestCase(100)]
         [TestCase(0)]
         [TestCase(-100)]
-        public void RfidDected_doorOpenEvent(int id)
+        public void TestRfidDected_doorOpenEvent_CurrentRFIDReaderIsCorrect(int id)
         {
             bool lockedDoor = true;
             _door.doorOpenEvent += Raise.EventWith(new DoorEventArgs { Door = lockedDoor });
@@ -80,47 +82,50 @@ namespace SWT_OP.Unit.Test
         }
 
         [TestCase(100)]
-    //    [TestCase(0)]
+        [TestCase(0)]
         [TestCase(-100)]
-        public void RfidDected_doorOpenEvent_CurrectId(int id)
+        public void TestRfidDected_doorOpenEvent_CurrectId(int id)
         {
-            bool lockedDoor = false;
-            _door.doorCloseEvent += Raise.EventWith(new DoorEventArgs { Door = lockedDoor });
             _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = id });
             Assert.That(_uut.CurrentDoor, Is.EqualTo(false));
         }
 
     
-        [Test]
-        public void TestForRfidDetectionWithTwoIDsSame()
+        [TestCase(100)]
+        [TestCase(-20)]
+        public void TestForRfidDetectionWithTwoIDsSame(int id)
         {
             _charger.IsConnected = true;
-            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
-            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = id });
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = id });
             _door.Received().UnlockedDoor();
         }
 
-        [Test]
-        public void TestForRfidDetectionWithTwoIDsNotSame()
+        [TestCase(100, 20)]
+        [TestCase(-20, -19)]
+        public void TestForRfidDetection_WithTwoIDsNotSame_(int id1, int id2)
         {
             _charger.IsConnected = true;
-            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 4 });
-            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = id1 });
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = id2 });
             _door.Received().LockedDoor();
         }
 
         [Test]
-        public void ChargerNotON()
+        public void TestChargerNotON()
         {
-            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
+            int id = 5;
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = id });
             _door.DidNotReceive().LockedDoor();
         }
 
         [Test]
-        public void DoorOpened()
+        public void TestDoorOpened()
         {
-            _door.doorOpenEvent += Raise.EventWith(new DoorEventArgs { Door = true });
-            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 5 });
+            bool idDoor = true;
+            int idRfid = 5;
+            _door.doorOpenEvent += Raise.EventWith(new DoorEventArgs { Door = idDoor });
+            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = idRfid });
             _door.DidNotReceive().LockedDoor();
         }
 

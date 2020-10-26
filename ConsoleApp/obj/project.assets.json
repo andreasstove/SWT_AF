@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "SWT_OP/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/SWT_OP.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SWT_OP.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "SWT_OP/1.0.0": {
+      "type": "project",
+      "path": "../SWT_OP/SWT_OP.csproj",
+      "msbuildProject": "../SWT_OP/SWT_OP.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "SWT_OP >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Thomas G. Lodberg\\.nuget\\packages\\": {}
@@ -13,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj",
-      "projectName": "SWT_OP",
-      "projectPath": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj",
+      "projectUniqueName": "C:\\Users\\Thomas G. Lodberg\\source\\repos\\andreasstove\\SWT_AF\\ConsoleApp\\ConsoleApp.csproj",
+      "projectName": "ConsoleApp",
+      "projectPath": "C:\\Users\\Thomas G. Lodberg\\source\\repos\\andreasstove\\SWT_AF\\ConsoleApp\\ConsoleApp.csproj",
       "packagesPath": "C:\\Users\\Thomas G. Lodberg\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\obj\\",
+      "outputPath": "C:\\Users\\Thomas G. Lodberg\\source\\repos\\andreasstove\\SWT_AF\\ConsoleApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Thomas G. Lodberg\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -32,7 +51,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Thomas G. Lodberg\\source\\repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj": {
+              "projectPath": "C:\\Users\\Thomas G. Lodberg\\source\\repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
