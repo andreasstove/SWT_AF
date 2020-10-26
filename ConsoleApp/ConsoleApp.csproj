@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SWT_OP.Unit.Test\SWT_OP.Unit.Test.csproj" />
     <ProjectReference Include="..\SWT_OP\SWT_OP.csproj" />
   </ItemGroup>
 
