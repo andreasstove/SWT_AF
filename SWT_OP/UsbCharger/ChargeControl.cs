@@ -21,13 +21,13 @@ namespace SWT_OP
 
         public void startCharge()
         {
-            Console.WriteLine("Der lades nu");
+            //Console.WriteLine("Der lades nu");
             _usbCharger.StartCharge();
         }
 
         public void stopCharge()
         {
-            Console.WriteLine("Der lades ikke længere");
+            //Console.WriteLine("Der lades ikke længere");
             _usbCharger.StopCharge();
         }
 
@@ -35,18 +35,18 @@ namespace SWT_OP
         {
             if (IsConnected != true)
             {
-                Console.WriteLine("Der er ikke en telefon tilslutted");
+                //Console.WriteLine("Der er ikke en telefon tilslutted");
             }
             else
             {
                 if (e.Current == 0)
                 {
-                    Console.WriteLine("opladning er stoppet");
+                    //Console.WriteLine("opladning er stoppet");
                     Current = e.Current;
                 }
                 else
                 {
-                    Console.WriteLine("Opladning er startet");
+                    //Console.WriteLine("Opladning er startet");
                     Current = e.Current;
                 }
             }

@@ -19,7 +19,7 @@ namespace SWT_OP
                 DoorClose(new DoorEventArgs { Door = true });
                 doorLocked = true;
             }
-            Console.WriteLine("Døren er lukket");
+            //Console.WriteLine("Døren er lukket");
         }
 
         public void UnlockedDoor()
@@ -29,7 +29,7 @@ namespace SWT_OP
                 DoorOpened(new DoorEventArgs { Door = false });
                 doorLocked = false;
             }
-            Console.WriteLine("Døren er åben");
+            //Console.WriteLine("Døren er åben");
         }
 
 

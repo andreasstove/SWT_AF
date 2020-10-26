@@ -79,12 +79,14 @@ namespace SWT_OP
                         _charger.startCharge();
                         _oldId = id;
                   
-                        Console.WriteLine("Skabet er låst og din telefon lades. Brug dit RFID tag til at låse op.");
+                        Console.WriteLine("DU ER INDE I LADESKABSTATE.Available Og _charger.IsConnected" +
+                            " Skabet er låst og din telefon lades. Brug dit RFID tag til at låse op.");
                         _state = LadeskabState.Locked;
                     }
                     else
                     {
-                        Console.WriteLine("Din telefon er ikke ordentlig tilsluttet. Prøv igen.");
+                        Console.WriteLine("DU ER INDE I LADESKABSTATE.Available OG INDE I ELSE." +
+                            " Din telefon er ikke ordentlig tilsluttet. Prøv igen.");
                     }
 
                     break;
@@ -101,12 +103,14 @@ namespace SWT_OP
                         _charger.stopCharge();
                         _door.UnlockedDoor();
                      
-                        Console.WriteLine("Tag din telefon ud af skabet og luk døren");
+                        Console.WriteLine("DU ER INDE I LADESKABSTATE.LOCKED OG INDE I IF" +
+                            ". Tag din telefon ud af skabet og luk døren");
                         _state = LadeskabState.Available;
                     }
                     else
                     {
-                        Console.WriteLine("Forkert RFID tag");
+                        Console.WriteLine("DU ER INDE I LADESKABSTATE.LOCKED OG INDE I ELSE" +
+                            ". Forkert RFID tag");
                     }
 
                     break;
