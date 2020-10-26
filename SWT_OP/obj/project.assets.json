@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Andreas\\.nuget\\packages\\": {}
+    "C:\\Users\\Thomas G. Lodberg\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andreas\\source\\repos\\SWT_AF\\SWT_OP\\SWT_OP.csproj",
+      "projectUniqueName": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj",
       "projectName": "SWT_OP",
-      "projectPath": "C:\\Users\\Andreas\\source\\repos\\SWT_AF\\SWT_OP\\SWT_OP.csproj",
-      "packagesPath": "C:\\Users\\Andreas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andreas\\source\\repos\\SWT_AF\\SWT_OP\\obj\\",
+      "projectPath": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj",
+      "packagesPath": "C:\\Users\\Thomas G. Lodberg\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Andreas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Thomas G. Lodberg\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
