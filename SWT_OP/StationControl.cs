@@ -56,8 +56,15 @@ namespace SWT_OP
         private void HandleDoorOpenEvent(object sender, DoorEventArgs e )
         {
             CurrentDoor = e.Door;
-            _state = LadeskabState.DoorOpen;
-            _display.showConnectToPhone();
+            if (_state == LadeskabState.Locked)
+            {
+                Console.WriteLine("Skabet er låst");
+            }
+            else
+            { 
+                _state = LadeskabState.DoorOpen;
+                _display.showConnectToPhone();
+            }
         }
         private void HandleDoorCloseEvent(object sender, DoorEventArgs e)
         {
@@ -92,6 +99,7 @@ namespace SWT_OP
                     break;
 
                 case LadeskabState.DoorOpen:
+                    Console.WriteLine("Døren er åben så den kan ikke låses");
                     // Ignore
                     break;
 
