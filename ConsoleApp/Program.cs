@@ -10,7 +10,8 @@ namespace ConsoleApp
             
             Door door = new Door();
             RFIDReader rFIDReader = new RFIDReader();
-            Display display = new Display();
+            TestDisplay testDisplay = new TestDisplay();
+            Display display = new Display(testDisplay);
             UsbCharger usbCharger = new UsbCharger();
             ChargeControl charge = new ChargeControl(usbCharger);
             StationControl station = new StationControl(door, rFIDReader, display, charge);

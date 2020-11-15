@@ -10,61 +10,60 @@ namespace SWT_OP.Unit.Test
     [TestFixture]
     class TestDisplay
     {
-        private IRFIDReader _rFIDReader;
-        private IDoor _door;
-        private IDisplay _display;
-        private IChargeControl _charger;
-
-        private StationControl _uut;
-
-
-
+        private ITestDisplay _testDisplay;
+        private Display _uut;
+        private string _text;
 
         [SetUp]
         public void Setup()
         {
-            _rFIDReader = Substitute.For<IRFIDReader>();
-            _display = Substitute.For<IDisplay>();
-            _door = Substitute.For<IDoor>();
-            _charger = Substitute.For<IChargeControl>();
-            _uut = new StationControl(_door, _rFIDReader, _display, _charger);
-
+            _testDisplay = Substitute.For<ITestDisplay>();
+            _uut = new Display(_testDisplay);
         }
 
         [Test]
-        public void ShowConnectionWithDoorEvent()
+        public void ShowConnectToPhone_test()
         {
-            _door.doorOpenEvent += Raise.EventWith(new DoorEventArgs { Door = true });
-            _display.Received().showConnectToPhone();
+            _text = "Tilslut telefon";
+            _uut.showConnectToPhone();
+            _testDisplay.Received(1).WriteLine(_text);
         }
-
         [Test]
-        public void ShowRFID()
+        public void ShowReadRFID_test()
         {
-            _door.doorCloseEvent += Raise.EventWith(new DoorEventArgs { Door = false });
-            _display.Received().showReadRFID();
+            _text = "Indlæs RFID";
+            _uut.showReadRFID();
+            _testDisplay.Received(1).WriteLine(_text);
         }
-
         [Test]
-        public void ShowConnection()
+        public void ShowConnectionToPhoneFailed_test()
         {
-            _charger.IsConnected = true;
-            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 8 });
-            _display.Received().showConnectToPhone();
+            _text = "Tilslutningsfejl";
+            _uut.showConnectionToPhoneFailed();
+            _testDisplay.Received(1).WriteLine(_text);
         }
-
         [Test]
-        public void ShowFailConnection()
+        public void ShowChargerCabinetIsOccupied_test()
         {
-            _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = 3 });
-            _display.Received().showConnectionToPhoneFailed();
+            _text = "Ladeskab optaget";
+            _uut.showChargerCabinetIsOccupied();
+            _testDisplay.Received(1).WriteLine(_text);
+        }
+        [Test]
+        public void ShowRFIDMistake_test()
+        {
+            _text = "RFID fejl";
+            _uut.showRFIDMistake();
+            _testDisplay.Received(1).WriteLine(_text);
+        }
+        [Test]
+        public void ShowRemovePhone_test()
+        {
+
+            _text = "Fjern telefon";
+            _uut.showRemovePhone();
+            _testDisplay.Received(1).WriteLine(_text);
         }
 
-        //[Test]
-        //public void et
-        //{
-
-        //}
-        
     }
 }

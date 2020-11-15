@@ -6,32 +6,36 @@ namespace SWT_OP
 {
     public class Display : IDisplay
     {
+        private ITestDisplay _testDisplay;
+        public Display(ITestDisplay testDisplay)
+        {
+            _testDisplay = testDisplay;
+        }
 
         public void showConnectToPhone()
         {
-            Console.WriteLine("Tilslut telefon");
+            _testDisplay.WriteLine("Tilslut telefon");
         }
         public void showReadRFID()
         {
-            Console.WriteLine("Indlæs RFID");
+            _testDisplay.WriteLine("Indlæs RFID");
         }
 
         public void showConnectionToPhoneFailed()
         {
-            Console.WriteLine("Tilslutningsfejl");
-
+            _testDisplay.WriteLine("Tilslutningsfejl");
         }
         public void showChargerCabinetIsOccupied()
         {
-            Console.WriteLine("Ladeskab optaget");
+            _testDisplay.WriteLine("Ladeskab optaget");
         }
         public void showRFIDMistake()
         {
-            Console.WriteLine("RFID fejl");
+            _testDisplay.WriteLine("RFID fejl");
         }
         public void showRemovePhone()
         {
-            Console.WriteLine("Fjern telefon");
+            _testDisplay.WriteLine("Fjern telefon");
         }
 
     }
