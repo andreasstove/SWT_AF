@@ -37,6 +37,9 @@ namespace SWT_OP
         {
             _testDisplay.WriteLine("Fjern telefon");
         }
-
+        public void showChargeIsDone()
+        {
+            _testDisplay.WriteLine("Opladning er færdig");
+        }
     }
 }

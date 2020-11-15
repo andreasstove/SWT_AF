@@ -13,5 +13,6 @@ namespace SWT_OP
         public void showChargerCabinetIsOccupied();
         public void showRFIDMistake();
         public void showRemovePhone();
+        public void showChargeIsDone();
     }
 }

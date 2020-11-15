@@ -8,9 +8,10 @@ namespace SWT_OP
     public class ChargeControl : IChargeControl
     {
         private readonly IUsbCharger _usbCharger;
+        private readonly IDisplay _display;
 
         public bool IsConnected { get; set; }
-        public double Current { get; set; }
+        public double Current { get; set; } 
 
         public ChargeControl(IUsbCharger usbCharger)
         {
@@ -45,6 +46,20 @@ namespace SWT_OP
                     //Console.WriteLine("Opladning er startet");
                     Current = e.Current;
                 }
+            }
+            switch(Current)
+            {
+                case double n when (0 < n && n <= 5):
+                    _usbCharger.StopCharge();
+                    _display.showChargeIsDone();
+                    break;
+                case double n when (5 < n && n <= 500):
+                    //show something
+                    break;
+                case double n when (500 < n):
+                    _usbCharger.StopCharge();
+                    _display.showConnectionToPhoneFailed();
+                    break;  
             }
         }
 

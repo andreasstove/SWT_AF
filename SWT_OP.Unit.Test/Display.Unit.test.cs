@@ -59,9 +59,15 @@ namespace SWT_OP.Unit.Test
         [Test]
         public void ShowRemovePhone_Called_WriteLine()
         {
-
             _text = "Fjern telefon";
             _uut.showRemovePhone();
+            _testDisplay.Received(1).WriteLine(_text);
+        }
+        [Test]
+        public void ShowChargeIsDone_Called_WriteLine()
+        {
+            _text = "Opladning er færdig";
+            _uut.showChargeIsDone();
             _testDisplay.Received(1).WriteLine(_text);
         }
     }
