@@ -43,6 +43,20 @@ namespace SWT_OP
                 }
                 else
                 {
+                    switch (e.Current)
+                    {
+                        case double n when (0 < n && n <= 5):
+                            stopCharge();
+                            _display.showChargeIsDone();
+                            break;
+                        case double n when (5 < n && n <= 500):
+                            _display.showIsCharging();
+                            break;
+                        case double n when (500 < n):
+                            stopCharge();
+                            _display.showConnectionToPhoneFailed();
+                            break;
+                    }
                     //Console.WriteLine("Opladning er startet");
                     Current = e.Current;
                 }

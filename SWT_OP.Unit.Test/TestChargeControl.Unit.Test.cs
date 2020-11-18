@@ -84,7 +84,34 @@ namespace SWT_OP.Unit.Test
             Assert.That(_uut.Current, Is.EqualTo(recvCurrent));
         
         }
-
-
+        [TestCase(5.1)]
+        [TestCase(500)]
+        [TestCase(400)]
+        public void HandleCurrentEvent_Called_showIsCharging(double current)
+        {
+            _usbCharger.connectedValueEvent += Raise.EventWith(new ConnectedEventArgs { Connected = true });
+            _usbCharger.currentValueEvent += Raise.EventWith(new CurrentEventArgs { Current = current });
+            _display.Received().showIsCharging();
+        }
+        [TestCase(500.1)]
+        [TestCase(600)]
+        public void HandleCurrentEvent_Called_showConnectionToPhoneFailed(double current)
+        {
+            _usbCharger.connectedValueEvent += Raise.EventWith(new ConnectedEventArgs { Connected = true });
+            _usbCharger.currentValueEvent += Raise.EventWith(new CurrentEventArgs { Current = current });
+            _display.Received().showConnectionToPhoneFailed();
+        }
+        [TestCase(0.1)]
+        [TestCase(5)]
+        [TestCase(1)]
+        public void HandleCurrentEvent_Called_showChargeIsDone(double current)
+        {
+            _usbCharger.connectedValueEvent += Raise.EventWith(new ConnectedEventArgs { Connected = true });
+            _usbCharger.currentValueEvent += Raise.EventWith(new CurrentEventArgs { Current = current });
+            _display.Received().showChargeIsDone();
+        }
     }
+ 
+
 }
+
