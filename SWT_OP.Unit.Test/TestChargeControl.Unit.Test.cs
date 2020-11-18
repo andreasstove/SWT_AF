@@ -98,6 +98,12 @@ namespace SWT_OP.Unit.Test
             _usbCharger.currentValueEvent += Raise.EventWith(new CurrentEventArgs { Current = current });
             _display.Received().showChargeIsDone();
         }
+        [Test]
+        public void HandleCurrentEvent_Called_IsNotConnected()
+        {
+            _usbCharger.connectedValueEvent += Raise.EventWith(new ConnectedEventArgs { Connected = false });
+            Assert.That(_uut.IsConnected, Is.False);
+        }
     }
  
 
