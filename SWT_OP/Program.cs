@@ -11,7 +11,7 @@ namespace SWT_OP
             TestDisplay testDisplay = new TestDisplay();
             Display display = new Display(testDisplay);
             UsbCharger usbCharger = new UsbCharger();
-            ChargeControl charge = new ChargeControl(usbCharger);
+            ChargeControl charge = new ChargeControl(usbCharger, display);
             StationControl station = new StationControl(door, rFIDReader, display, charge);
             Console.WriteLine("Det hele er nu initiaseret og kan kører som program.");
             System.Threading.Thread.Sleep(1000);
@@ -22,7 +22,7 @@ namespace SWT_OP
             Console.WriteLine("Nu sættes telefonen  til før at RFI'en bruges");
             System.Threading.Thread.Sleep(1000);
             //prøv først at starte det uden´.
-            usbCharger.ConnectPhone();
+            //usbCharger.ConnectPhone();
 
             rFIDReader.RfidDetect(110);
             System.Threading.Thread.Sleep(1000);
