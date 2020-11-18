@@ -49,7 +49,7 @@ namespace SWT_OP
             }
         }
         /*
-
+        sdf
             private void HandleCurrentEvent(double Current)
         {
             switch(Current)
