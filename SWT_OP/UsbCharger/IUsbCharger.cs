@@ -7,7 +7,7 @@ namespace SWT_OP
         public event EventHandler<CurrentEventArgs> currentValueEvent;
         public event EventHandler<ConnectedEventArgs> connectedValueEvent;
         public double CurrentValue { get; set; }
-        public bool Connectedbool { get; }
+        public bool ConnectedBool { get; set; }
         public void StartCharge();
         public void StopCharge();
 

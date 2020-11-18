@@ -14,8 +14,8 @@ namespace SWT_OP
 
 
         public double CurrentValue { get; set; }
+        public bool ConnectedBool { get; set; }
         public bool Connected { get; set; }
-        public bool Connectedbool { get; private set; }
 
         public event EventHandler<ConnectedEventArgs> connectedValueEvent;
         public event EventHandler<CurrentEventArgs> currentValueEvent;
@@ -45,16 +45,16 @@ namespace SWT_OP
         
         public void ConnectPhone()
         {
-            Connectedbool = true;
-            ConnectedDetectedEvent(new ConnectedEventArgs { Connected = Connectedbool });
+            ConnectedBool = true;
+            ConnectedDetectedEvent(new ConnectedEventArgs { Connected = ConnectedBool });
             //Console.WriteLine("telefonen er nu forbundet");
 
         }
 
         public void DisconnectPhone()
         {
-            Connectedbool = false;
-            ConnectedDetectedEvent(new ConnectedEventArgs { Connected = Connectedbool });
+            ConnectedBool = false;
+            ConnectedDetectedEvent(new ConnectedEventArgs { Connected = ConnectedBool });
             //Console.WriteLine("Telefonen er ikke forbundet længere");
         }
 
