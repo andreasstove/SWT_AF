@@ -41,5 +41,9 @@ namespace SWT_OP
         {
             _testDisplay.WriteLine("Opladning er færdig");
         }
+        public void showIsCharging()
+        {
+            _testDisplay.WriteLine("Opladning foregår normalt");
+        }
     }
 }

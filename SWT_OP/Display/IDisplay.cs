@@ -14,5 +14,6 @@ namespace SWT_OP
         public void showRFIDMistake();
         public void showRemovePhone();
         public void showChargeIsDone();
+        public void showIsCharging();
     }
 }

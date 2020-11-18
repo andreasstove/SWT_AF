@@ -70,5 +70,12 @@ namespace SWT_OP.Unit.Test
             _uut.showChargeIsDone();
             _testDisplay.Received(1).WriteLine(_text);
         }
+        [Test]
+        public void ShowIsCharging_Called_WriteLine()
+        {
+            _text = "Opladning foregår normalt";
+            _uut.showIsCharging();
+            _testDisplay.Received(1).WriteLine(_text);
+        }
     }
 }

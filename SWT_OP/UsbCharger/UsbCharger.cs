@@ -1,14 +1,28 @@
 ﻿using System;
+using System.Timers;
 
 namespace SWT_OP
 {
     public class UsbCharger : IUsbCharger
     {
-        public double CurrentValue { get; set; }
-        public bool Connectedbool { get; set; }
+        // Constants
+        private const double MaxCurrent = 500.0; // mA
+        private const double FullyChargedCurrent = 2.5; // mA
+        private const double OverloadCurrent = 750; // mA
+        private const int ChargeTimeMinutes = 20; // minutes
+        private const int CurrentTickInterval = 250; // ms
 
-        public event EventHandler<CurrentEventArgs> currentValueEvent;
+        private bool _overload;
+        private bool _charging;
+        private System.Timers.Timer _timer;
+        private int _ticksSinceStart;
+
+        public double CurrentValue { get; set; }
+        public bool Connected { get; set; }
+
+        public event EventHandler<CurrentEventArgs> CurrentValueEvent;
         public event EventHandler<ConnectedEventArgs> connectedValueEvent;
+
 
         protected virtual void CurrentValueDetectedEvent(CurrentEventArgs e)
         {
@@ -19,8 +33,31 @@ namespace SWT_OP
         {
             connectedValueEvent?.Invoke(this, e);
         }
+        private void TimerOnElapsed(object sender, ElapsedEventArgs e)
+        {
+            // Only execute if charging
+            if (_charging)
+            {
+                _ticksSinceStart++;
+                if (Connected && !_overload)
+                {
+                    double newValue = MaxCurrent -
+                                      _ticksSinceStart * (MaxCurrent - FullyChargedCurrent) / (ChargeTimeMinutes * 60 * 1000 / CurrentTickInterval);
+                    CurrentValue = Math.Max(newValue, FullyChargedCurrent);
+                }
+                else if (Connected && _overload)
+                {
+                    CurrentValue = OverloadCurrent;
+                }
+                else if (!Connected)
+                {
+                    CurrentValue = 0.0;
+                }
 
-       
+                OnNewCurrent();
+            }
+        }
+
 
 
         public void StartCharge()
@@ -50,6 +87,10 @@ namespace SWT_OP
             Connectedbool = false;
             ConnectedDetectedEvent(new ConnectedEventArgs { Connected = Connectedbool });
             //Console.WriteLine("Telefonen er ikke forbundet længere");
+        }
+        private void OnNewCurrent()
+        {
+            CurrentValueEvent?.Invoke(this, new CurrentEventArgs() { Current = this.CurrentValue });
         }
     }
 }
