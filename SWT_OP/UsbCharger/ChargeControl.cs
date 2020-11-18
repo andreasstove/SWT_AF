@@ -10,15 +10,20 @@ namespace SWT_OP
         private readonly IUsbCharger _usbCharger;
         private readonly IDisplay _display;
 
+       
+
         public bool IsConnected { get; set; }
-        public double Current { get; set; } 
+        public double Current { get; set; }
+        
 
         public ChargeControl(IUsbCharger usbCharger, IDisplay display)
         {
-            //usbCharger.currentValueEvent += HandleCurrentEvent;
+
             _display = display;
-            usbCharger.connectedValueEvent += HandleConnectionEvent;
             _usbCharger = usbCharger;
+
+            usbCharger.connectedValueEvent += HandleConnectionEvent;
+            usbCharger.currentValueEvent += HandleCurrentEvent;
         }
 
         public void startCharge()
@@ -31,9 +36,11 @@ namespace SWT_OP
             _usbCharger.StopCharge();
         }
 
-        private void HandleCurrentEvent(double Current)
+
+
+        private void HandleCurrent(double current)
         {
-            switch(Current)
+            switch(current)
             {
                 case double n when (0 < n && n <= 5):
                     _usbCharger.StopCharge();
@@ -50,15 +57,18 @@ namespace SWT_OP
         }
 
         private void HandleConnectionEvent(object s, ConnectedEventArgs e)
-        {
-            
+        { 
             IsConnected = e.Connected;
             if (IsConnected == false)
             {
                 Current = 0;
             }
             
+            
         }
-
+        private void HandleCurrentEvent(object s, CurrentEventArgs e)
+        {
+            HandleCurrent(e.Current);
+        }
     }
 }

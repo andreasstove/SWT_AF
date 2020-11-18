@@ -8,34 +8,37 @@ namespace SWT_OP.Unit.Test
     public class TestChargeControl
     {
         private IUsbCharger _usbCharger;
-
+        private ITestDisplay _testDisplay;
         private ChargeControl _uut;
+        private IDisplay _display;
 
         [SetUp]
         public void Setup()
         {
             _usbCharger = Substitute.For<IUsbCharger>();
+            _testDisplay = Substitute.For<ITestDisplay>();
+            _display = Substitute.For <IDisplay>();
 
-            _uut = new ChargeControl(_usbCharger);
+            _uut = new ChargeControl(_usbCharger, _display);
         }
 
-        //[TestCase(-100,false)]
-        //[TestCase(0,false)]
-        //[TestCase(100,true)]
-        //[TestCase(200,true)]
-        //[TestCase(500,true)]
-        //public void testForCurrentLow(double current, bool set)
-        //{
-        //    _usbCharger.currentValueEvent += Raise.EventWith(new CurrentEventArgs { Current = current });
-        //    Assert.That(_uut.IsConnected, Is.EqualTo(set));
-        //}
+        [TestCase(-100, false)]
+        [TestCase(0, false)]
+        [TestCase(100, true)]
+        [TestCase(200, true)]
+        [TestCase(500, true)]
+        public void testForCurrentLow(double current, bool set)
+        {
+            _usbCharger.currentValueEvent += Raise.EventWith(new CurrentEventArgs { Current = current });
+            Assert.That(_uut.IsConnected, Is.EqualTo(set));
+        }
 
         [TestCase(false)]
         [TestCase(true)]
         public void TestToConnection(bool connection)
         {
             _usbCharger.connectedValueEvent += Raise.EventWith(new ConnectedEventArgs { Connected = connection });
-            Assert.That(_uut.IsConnected, Is.EqualTo(connection));
+            Assert.That(_uut.IsConnected, Is.False);
         }
 
         [TestCase(false)]

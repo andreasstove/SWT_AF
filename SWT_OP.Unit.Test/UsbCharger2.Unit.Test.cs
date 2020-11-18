@@ -31,6 +31,7 @@ namespace SWT_OP.Unit.Test
                 {
                     _connectedEventArgs = args;
                 };
+                
         }
 
 
@@ -59,7 +60,7 @@ namespace SWT_OP.Unit.Test
         }
 
         [Test]
-        public void ISNOTConnected()
+        public void ISNotConnected()
         {
             _uut.DisconnectPhone();
 
