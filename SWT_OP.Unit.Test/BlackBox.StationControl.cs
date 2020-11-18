@@ -8,7 +8,7 @@ using NSubstitute;
 namespace SWT_OP.Unit.Test
 {
     [TestFixture]
-    public class BlackBoxTestStationControl
+    public class TestStationControlBlackBox
     {
         private IRFIDReader _rFIDReader;
         private IDoor _door;
@@ -20,9 +20,8 @@ namespace SWT_OP.Unit.Test
         [SetUp]
         public void Setup()
         {
-            _door = new Door();
-            _rFIDReader = new RFIDReader();
-            //_display = new Display();
+            _door = Substitute.For<IDoor>();
+            _rFIDReader = Substitute.For<IRFIDReader>();
             _display = Substitute.For<IDisplay>();
             _charger = Substitute.For<IChargeControl>();
 
@@ -37,6 +36,7 @@ namespace SWT_OP.Unit.Test
             _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = id });
             Assert.That(_uut.CurrentRFIDReader, Is.EqualTo(id));
         }
+        //Når vi får data fra rfid, så test på at døren låser og ikke hvad testen modtager. Test også på at charger modtager at den skal starte
         [TestCase(true)]
         [TestCase(false)]
         public void DoorOpenEventRaised_booleanArguments_CurretDoorIsCorrect(bool id)
@@ -111,6 +111,7 @@ namespace SWT_OP.Unit.Test
             _rFIDReader.RfidEvent += Raise.EventWith(new RFIDEventArgs { RFID = id2 });
             _door.Received().LockedDoor();
         }
+        //hvad skal den gøre for at det er rigtigt, det er at vi skal printe noget, det viser sekvensdiagrammet også
 
         [Test]
         public void TestChargerNotON()
