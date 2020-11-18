@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\ConsoleApp\\ConsoleApp.csproj": {}
+    "C:\\Users\\Andreas\\Source\\Repos\\andreasstove\\SWT_AF\\ConsoleApp\\ConsoleApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\ConsoleApp\\ConsoleApp.csproj": {
+    "C:\\Users\\Andreas\\Source\\Repos\\andreasstove\\SWT_AF\\ConsoleApp\\ConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\ConsoleApp\\ConsoleApp.csproj",
+        "projectUniqueName": "C:\\Users\\Andreas\\Source\\Repos\\andreasstove\\SWT_AF\\ConsoleApp\\ConsoleApp.csproj",
         "projectName": "ConsoleApp",
-        "projectPath": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\ConsoleApp\\ConsoleApp.csproj",
-        "packagesPath": "C:\\Users\\Thomas G. Lodberg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\ConsoleApp\\obj\\",
+        "projectPath": "C:\\Users\\Andreas\\Source\\Repos\\andreasstove\\SWT_AF\\ConsoleApp\\ConsoleApp.csproj",
+        "packagesPath": "C:\\Users\\Andreas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Andreas\\Source\\Repos\\andreasstove\\SWT_AF\\ConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Thomas G. Lodberg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Andreas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,9 +26,10 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj": {
-                "projectPath": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj"
+              "C:\\Users\\Andreas\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj": {
+                "projectPath": "C:\\Users\\Andreas\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj"
               }
             }
           }
@@ -41,6 +42,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -56,21 +58,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj": {
+    "C:\\Users\\Andreas\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj",
+        "projectUniqueName": "C:\\Users\\Andreas\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj",
         "projectName": "SWT_OP",
-        "projectPath": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj",
-        "packagesPath": "C:\\Users\\Thomas G. Lodberg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\obj\\",
+        "projectPath": "C:\\Users\\Andreas\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj",
+        "packagesPath": "C:\\Users\\Andreas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Andreas\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Thomas G. Lodberg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Andreas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,6 +84,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -93,6 +96,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -108,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
