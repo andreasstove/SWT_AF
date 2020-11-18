@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Thomas G. Lodberg\\source\\repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj": {}
+    "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Thomas G. Lodberg\\source\\repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj": {
+    "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Thomas G. Lodberg\\source\\repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj",
+        "projectUniqueName": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj",
         "projectName": "SWT_OP",
-        "projectPath": "C:\\Users\\Thomas G. Lodberg\\source\\repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj",
+        "projectPath": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\SWT_OP.csproj",
         "packagesPath": "C:\\Users\\Thomas G. Lodberg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Thomas G. Lodberg\\source\\repos\\andreasstove\\SWT_AF\\SWT_OP\\obj\\",
+        "outputPath": "C:\\Users\\Thomas G. Lodberg\\Source\\Repos\\andreasstove\\SWT_AF\\SWT_OP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Thomas G. Lodberg\\AppData\\Roaming\\NuGet\\NuGet.Config",
