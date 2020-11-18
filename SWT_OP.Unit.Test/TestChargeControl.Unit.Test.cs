@@ -72,18 +72,6 @@ namespace SWT_OP.Unit.Test
             _uut.stopCharge();
             _usbCharger.Received(1).StopCharge();
         }
-
-        [TestCase(false,500,0)]
-        [TestCase(false,0,0)]
-        [TestCase(true,500,500)]
-        [TestCase(true,0,0)]
-        public void TestForConnectionAndCurrent(bool connection, double sendCurrent, double recvCurrent)
-        {
-            _usbCharger.connectedValueEvent += Raise.EventWith(new ConnectedEventArgs { Connected = connection });
-            _usbCharger.currentValueEvent += Raise.EventWith(new CurrentEventArgs { Current = sendCurrent });
-            Assert.That(_uut.Current, Is.EqualTo(recvCurrent));
-        
-        }
         [TestCase(5.1)]
         [TestCase(500)]
         [TestCase(400)]

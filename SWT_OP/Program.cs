@@ -22,7 +22,7 @@ namespace SWT_OP
             Console.WriteLine("Nu sættes telefonen  til før at RFI'en bruges");
             System.Threading.Thread.Sleep(1000);
             //prøv først at starte det uden´.
-            //usbCharger.ConnectPhone();
+            usbCharger.ConnectPhone();
 
             rFIDReader.RfidDetect(110);
             System.Threading.Thread.Sleep(1000);

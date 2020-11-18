@@ -11,14 +11,13 @@ namespace SWT_OP
         private readonly IDisplay _display;
 
         public bool IsConnected { get; set; }
-        public double Current { get; set; } 
 
         public ChargeControl(IUsbCharger usbCharger, IDisplay display)
         {
-            usbCharger.currentValueEvent += HandleCurrentEvent;
             _display = display;
-            usbCharger.connectedValueEvent += HandleConnectionEvent;
             _usbCharger = usbCharger;
+            usbCharger.currentValueEvent += HandleCurrentEvent;
+            usbCharger.connectedValueEvent += HandleConnectionEvent;
         }
 
         public void startCharge()
@@ -37,12 +36,6 @@ namespace SWT_OP
             }
             else
             {
-                if (e.Current == 0)
-                {
-                    Current = e.Current;
-                }
-                else
-                {
                     switch (e.Current)
                     {
                         case double n when (0 < n && n <= 5):
@@ -57,40 +50,11 @@ namespace SWT_OP
                             _display.showConnectionToPhoneFailed();
                             break;
                     }
-                    //Console.WriteLine("Opladning er startet");
-                    Current = e.Current;
-                }
             }
         }
-        /*
-        sdf
-            private void HandleCurrentEvent(double Current)
-        {
-            switch(Current)
-            {
-                case double n when (0 < n && n <= 5):
-                    _usbCharger.StopCharge();
-                    _display.showChargeIsDone();
-                    break;
-                case double n when (5 < n && n <= 500):
-                    _display.showIsCharging();
-                    break;
-                case double n when (500 < n):
-                    _usbCharger.StopCharge();
-                    _display.showConnectionToPhoneFailed();
-                    break;  
-            }
-        }
-        */
         private void HandleConnectionEvent(object s, ConnectedEventArgs e)
         {
-           
             IsConnected = e.Connected;
-            if (IsConnected == false)
-            {
-                Current = 0;
-            }
-            
         }
 
     }
