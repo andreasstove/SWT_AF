@@ -15,7 +15,7 @@ namespace SWT_OP
 
         public ChargeControl(IUsbCharger usbCharger, IDisplay display)
         {
-            //usbCharger.currentValueEvent += HandleCurrentEvent;
+            usbCharger.currentValueEvent += HandleCurrentEvent;
             _display = display;
             usbCharger.connectedValueEvent += HandleConnectionEvent;
             _usbCharger = usbCharger;
@@ -30,8 +30,27 @@ namespace SWT_OP
         {
             _usbCharger.StopCharge();
         }
+        private void HandleCurrentEvent(object s, CurrentEventArgs e)
+        {
+            if (IsConnected != true)
+            {
+            }
+            else
+            {
+                if (e.Current == 0)
+                {
+                    Current = e.Current;
+                }
+                else
+                {
+                    //Console.WriteLine("Opladning er startet");
+                    Current = e.Current;
+                }
+            }
+        }
+        /*
 
-        private void HandleCurrentEvent(double Current)
+            private void HandleCurrentEvent(double Current)
         {
             switch(Current)
             {
@@ -48,10 +67,10 @@ namespace SWT_OP
                     break;  
             }
         }
-
+        */
         private void HandleConnectionEvent(object s, ConnectedEventArgs e)
         {
-            
+           
             IsConnected = e.Connected;
             if (IsConnected == false)
             {

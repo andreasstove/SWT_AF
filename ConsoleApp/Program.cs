@@ -13,7 +13,7 @@ namespace ConsoleApp
             TestDisplay testDisplay = new TestDisplay();
             Display display = new Display(testDisplay);
             UsbCharger usbCharger = new UsbCharger();
-            ChargeControl charge = new ChargeControl(usbCharger);
+            ChargeControl charge = new ChargeControl(usbCharger, display);
             StationControl station = new StationControl(door, rFIDReader, display, charge);
             Console.WriteLine("Det hele er nu initialiseret og kan køre som program.");
             System.Threading.Thread.Sleep(5000);
@@ -26,7 +26,7 @@ namespace ConsoleApp
             Console.WriteLine("Nu sættes telefonen til for at RFI'en bruges");
             System.Threading.Thread.Sleep(5000);
             //prøv først at starte det uden´.
-            usbCharger.ConnectPhone();
+            //usbCharger.ConnectPhone();
             rFIDReader.RfidDetect(110);
             System.Threading.Thread.Sleep(5000);
             
